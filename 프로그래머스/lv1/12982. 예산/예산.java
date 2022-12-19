@@ -3,14 +3,12 @@ import java.util.*;
 class Solution {
     public int solution(int[] d, int budget) {
         int answer = 0;
+        Arrays.sort(d);
         
-        int sum = 0;
         for (int i = 0; i < d.length; i++) {
-            Arrays.sort(d);
-            if (d[0] > budget) break;
-            sum += d[i];
+            budget -= d[i];
+            if (budget < 0) break;
             answer++;
-            if (i == d.length-1 || sum+d[i+1] > budget) break;
         }
         
         return answer;
