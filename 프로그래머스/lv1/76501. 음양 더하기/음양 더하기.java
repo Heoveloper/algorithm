@@ -5,8 +5,7 @@ class Solution {
         for (int i = 0; i < signs.length; i++) {
             if (i == 0) answer = 0;
             int a = absolutes[i];
-            a = !signs[i] ? -a : a;
-            answer += a;
+            answer += !signs[i] ? -a : a;
         }
         
         return answer;
